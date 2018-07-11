@@ -1,0 +1,17 @@
+{
+  "name": "cms",
+  "version": "0.0.1",
+  "bin": {
+    "cms": "./index.js"
+  },
+  "dependencies": {
+    "commander": "2.16.0",
+    "chalk": "",
+    "hyperdb": "",
+    "hyperdiscovery": "",
+    "wrtc": "",
+    "webrtc-swarm": "",
+    "signalhub": "",
+    "pump": ""
+  }
+}
