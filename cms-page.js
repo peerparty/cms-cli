@@ -8,7 +8,6 @@ function createPage() {
 }
 
 async function processFile() {
-  console.log("------> " + program.hash);
   const file = program.args[0];
   if(!file) utils.handleError(new Error("No file specified"));
   const content = await utils.contentStr(file);

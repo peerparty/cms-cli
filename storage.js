@@ -7,6 +7,7 @@ const hyperdb = require('hyperdb'),
   homedir = require('os').homedir();
 
 const DEFAULT_SIGNALHUBS = 'http://localhost/signalhub';
+//const DEFAULT_SIGNALHUBS = 'https://signalhub-jccqtwhdwc.now.sh';
 let db = null;
 
 exports.init = function() {
@@ -16,7 +17,7 @@ exports.init = function() {
       const key = db.key.toString('hex');
       const disckey = db.discoveryKey.toString('hex');
 
-//      console.log('KEY: ' + key); 
+      console.log('KEY: ' + key); 
 //      console.log('DISC KEY: ' + disckey);
 //      console.log('LOCAL KEY: ' + db.local.key.toString('hex'));
 
