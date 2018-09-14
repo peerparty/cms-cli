@@ -1,4 +1,0 @@
-# Bar
-
-Hello world!
-

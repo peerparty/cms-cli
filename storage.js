@@ -6,8 +6,9 @@ const hyperdb = require('hyperdb'),
   pump = require('pump'),
   homedir = require('os').homedir();
 
-const DEFAULT_SIGNALHUBS = 'http://localhost/signalhub';
+//const DEFAULT_SIGNALHUBS = 'http://localhost/signalhub';
 //const DEFAULT_SIGNALHUBS = 'https://signalhub-jccqtwhdwc.now.sh';
+const DEFAULT_SIGNALHUBS = 'https://signalhub.p2ee.org';
 let db = null;
 
 exports.init = function() {
@@ -17,13 +18,17 @@ exports.init = function() {
       const key = db.key.toString('hex');
       const disckey = db.discoveryKey.toString('hex');
 
-      console.log('KEY: ' + key); 
+//      console.log('KEY: ' + key); 
 //      console.log('DISC KEY: ' + disckey);
 //      console.log('LOCAL KEY: ' + db.local.key.toString('hex'));
 
       resolve();
     });
   });
+}
+
+exports.key = function() {
+  return db.key.toString('hex');
 }
 
 exports.run = function() {
@@ -34,18 +39,19 @@ exports.run = function() {
   });
   */
   const disckey = db.discoveryKey.toString('hex');
-  console.log('DISC KEY: ' + disckey);
+  //console.log('DISC KEY: ' + disckey);
   const swarm = webrtc(signalhub(disckey, DEFAULT_SIGNALHUBS), { 
     wrtc: require('wrtc')
   });
   swarm.on('peer', function (conn) {
-    console.log("PEER!!!!!!!");
+    console.log("💕 You've got a new peer!");
     const peer = db.replicate({
       upload: true,
       download: true
     });
     pump(conn, peer, conn)
   });
+  console.log("🏃 Running...")
 }
 
 function createKey(str) {

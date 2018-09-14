@@ -12,10 +12,10 @@ async function processFile() {
   if(!file) utils.handleError(new Error("No file specified"));
   const content = await utils.contentStr(file);
   if(program.hash) storage.updatePage(program.hash, content, program.title)
-    .then(hash => { utils.handleSuccess('File updated: ' + hash) })
+    .then(hash => { utils.handleSuccess('✏️  File updated: ' + hash) })
     .catch(utils.handleError);
   else storage.addPage(content, program.title)
-    .then(hash => { utils.handleSuccess('File created: ' + hash) })
+    .then(hash => { utils.handleSuccess('✨ File created: ' + hash) })
     .catch(utils.handleError);
 }
 

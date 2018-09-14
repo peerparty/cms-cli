@@ -11,4 +11,4 @@ program
 //  .option('-f, --force', 'force installation')
   .parse(process.argv);
 
-storage.init().then(storage.run).catch(handleError);
+storage.init().then(() => console.log('🔑 ' + storage.key())).catch(handleError);
