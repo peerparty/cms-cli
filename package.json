@@ -5,13 +5,14 @@
     "cms": "./index.js"
   },
   "dependencies": {
-    "commander": "2.16.0",
     "chalk": "",
+    "commander": "2.16.0",
     "hyperdb": "",
     "hyperdiscovery": "",
-    "wrtc": "",
-    "webrtc-swarm": "",
+    "markdown": "^0.5.0",
+    "pump": "",
     "signalhub": "",
-    "pump": ""
+    "webrtc-swarm": "",
+    "wrtc": ""
   }
 }
