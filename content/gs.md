@@ -26,7 +26,7 @@ Since you have cloned the dat, you will need to get the key of your new hyperdb.
 
 ### Tell the client which database 
 
-You will need to tell the client which hyperdb to use.  You can set this by opening the index.js of the client in your favorite editor and updating the line that begins with:
+You will need to tell the client which hyperdb to use.  You can set this by opening the cms.js of the client in your favorite editor and updating the line that begins with:
 
     const key = 
 
@@ -38,11 +38,11 @@ Example:
 
 To create a new webpage simply author a markdown file, and add it to the CMS.
 
-    $ cms page yourfile.md
+    $ cms add yourfile.md -t "Some title"
 
 For additional options try:
 
-    $ cms page
+    $ cms add 
 
 ### Browsers are peers 
 
